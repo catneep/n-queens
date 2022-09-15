@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  db:
+    build: ./DB/
+  app:
+    build: ./App/
+    depends_on:
+      - db
+  webclient:
+    build: ./Client/
+    ports:
+      - 443:443
+    depends_on:
+      - db

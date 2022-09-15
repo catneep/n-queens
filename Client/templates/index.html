@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N Queens - Web Client</title>
+
+  <style>
+    html, body{
+      top: 0;
+      left: 0;
+      padding: 0;
+      margin: 0;
+      background-color: #2d2d2d;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    main{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    main *{
+      width: 100%;
+      text-align: center;
+    }
+    h1 { margin-bottom: 0;}
+    p#updated, h2{ margin-bottom: 0.2em; }
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    footer > p { font-size: 0.6rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>N-Queens solutions</h1>
+    <p id="updated">
+      Last updated: <b>{{time}}</b>
+    </p>
+    <h2>Solutions</h2>
+    <hr />
+    <p>Highest <em>n:</em> <b>{{length}}</b></p>
+    {% for solution in solutions %}
+      <p>{{ solution }}</p>
+    {% endfor %}
+    <hr />
+    <footer>
+      <p>You can also see the <a href="https://en.wikipedia.org/wiki/Eight_queens_puzzle#Counting_solutions_for_other_sizes_n" target="_blank">expected solutions</a></p>
+    </footer>
+  </main>
+  <script type="text/javascript">
+    setTimeout(function () {
+      location.reload();
+    }, 1000 * 5);
+  </script>
+</body>
+</html>

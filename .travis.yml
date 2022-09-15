@@ -1,0 +1,8 @@
+language: python
+python:
+  - "3.8.13"
+before-install:
+  - cd App/Tests
+install:
+  - pip install -r ../requirements.txt
+script: python3 -m unittest
