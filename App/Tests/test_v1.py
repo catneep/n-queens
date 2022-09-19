@@ -23,8 +23,9 @@ class TestQueens(ut.TestCase):
             self.assertEqual(len(get_queens(n)), solution)
 
     def test_high(self):
-        solution = get_solution(11)
-        self.assertEqual(len(get_queens(11)), solution)
+        n = 11
+        solution = get_solution(n)
+        self.assertEqual(len(get_queens(n)), solution)
 
 if __name__ == "__main__":
     ut.main()

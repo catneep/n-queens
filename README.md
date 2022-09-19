@@ -109,3 +109,7 @@ These tests may be run with a default installation of python by navigating to th
 This repository also uses Travis CI in order to run these tests automatically, the current state for the latest commit can be seen at the top of this page.
 
 ![Testing status](assets/travis.png)
+
+You can also see the status of the latest build job in the following URL:
+
+{}

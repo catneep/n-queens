@@ -5,4 +5,13 @@ before-install:
   - cd App/Tests
 install:
   - pip install -r ../requirements.txt
-script: python3 -m unittest
+script:
+  - python3 -m unittest
+after-success:
+  - cd ../../
+  - sed -i '$d' ./README.md
+  - echo $TRAVIS_JOB_WEB_URL >> ./README.md
+  - git checkout main
+  - git add ./README.md
+  - git commit -m "Travis Update [skip ci]"
+  - git push https://$GITHUB_TOKEN@github.com/catneep/n-queens.git
