@@ -126,4 +126,4 @@ This repository also uses Travis CI in order to run these tests automatically, t
 
 You can also see the status of the latest build job in the following URL:
 
-https://app.travis-ci.com/catneep/n-queens/jobs/583258890
+https://app.travis-ci.com/catneep/n-queens/jobs/585073382
