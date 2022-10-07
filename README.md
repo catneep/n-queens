@@ -51,9 +51,19 @@ This project uses a backtracking algorithm implemented in Python 3, consisting o
 4. Add each diagonal's index to its corresponding constraint set
 5. Go to the following row and repeat
 
-Once all pieces have been placed, the solution is stored in a list, thus, the length of this list is the total number of solutions for a given *n*.
+Once all pieces have been placed, the solution is stored in a set, thus, the length of this set is the total number of solutions for a given *n*.
 
 ![Solution for 4x4 board](assets/valid.png)
+
+### About result parsing
+
+Each resulting board is represented as a string of length *n*, where each character is the position (or index) that a queen occupies within every row.
+
+For example, the string **1302** can be interpreted as the following board state:
+
+!["1302" as a board](assets/string_rep.png)
+
+This results in a lower memory usage at runtime, and it also allows us to use a set in order to store them, as we know that none of the solutions will ever be repeated.
 
 ### Notes
 - This project borrows from the solution proposed by <a href='https://twitter.com/neetcode1'><em>NeetCode</em></a> in Jun/15/2021, as can be seen in <a href='https://youtu.be/Ph95IHmRp5M'>this YouTube video</a>
@@ -103,6 +113,10 @@ The <a href='#sol-table'>expected solutions</a> are obtained from a <em>.csv</em
 These tests may be run with a default installation of python by navigating to the project's `./Tests/` directory and using this command:
 
     py -m unittest
+
+Or with a global installation of pytest:
+
+    pytest
 
 ### Travis CI
 
